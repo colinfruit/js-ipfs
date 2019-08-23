@@ -105,9 +105,9 @@ function defaultBundle ({ datastore, peerInfo, peerBook, options, config }) {
           ipns: ipnsUtils.selector
         }
       },
-      EXPERIMENTAL: {
-        pubsub: get(options, 'EXPERIMENTAL.pubsub', false)
-      }
+      //EXPERIMENTAL: {
+        pubsub: { enabled: get(options, 'EXPERIMENTAL.pubsub', false) }
+      //}
     },
     connectionManager: get(options, 'connectionManager',
       {

@@ -86,7 +86,7 @@ function addNode (fDaemon, inProcNode, callback) {
   })
 }
 
-describe('bitswap', function () {
+describe.only('bitswap', function () {
   this.timeout(80 * 1000)
 
   let inProcNode // Node spawned inside this process

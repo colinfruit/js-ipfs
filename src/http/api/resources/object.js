@@ -155,7 +155,7 @@ exports.put = {
     }
 
     try {
-      return { node: DAGNode.create(nodeJson.Data, nodeJson.Links) }
+      return { node: new DAGNode(nodeJson.Data, nodeJson.Links) }
     } catch (err) {
       throw Boom.badRequest('Failed to create DAG node: ' + err)
     }

@@ -56,7 +56,7 @@ module.exports = (http) => {
       })
 
       it('returns value', async () => {
-        const node = DAGNode.create(Buffer.from([]), [])
+        const node = new DAGNode(Buffer.from([]), [])
         const cid = await http.api._ipfs.dag.put(node, {
           format: 'dag-pb',
           hashAlg: 'sha2-256'
@@ -73,7 +73,7 @@ module.exports = (http) => {
       })
 
       it('uses text encoding for data by default', async () => {
-        const node = DAGNode.create(Buffer.from([0, 1, 2, 3]), [])
+        const node = new DAGNode(Buffer.from([0, 1, 2, 3]), [])
         const cid = await http.api._ipfs.dag.put(node, {
           format: 'dag-pb',
           hashAlg: 'sha2-256'
@@ -91,7 +91,7 @@ module.exports = (http) => {
       })
 
       it('overrides data encoding', async () => {
-        const node = DAGNode.create(Buffer.from([0, 1, 2, 3]), [])
+        const node = new DAGNode(Buffer.from([0, 1, 2, 3]), [])
         const cid = await http.api._ipfs.dag.put(node, {
           format: 'dag-pb',
           hashAlg: 'sha2-256'
@@ -126,7 +126,7 @@ module.exports = (http) => {
       })
 
       it('returns value with a path as part of the cid for dag-pb nodes', async () => {
-        const node = DAGNode.create(Buffer.from([0, 1, 2, 3]), [])
+        const node = new DAGNode(Buffer.from([0, 1, 2, 3]), [])
         const cid = await http.api._ipfs.dag.put(node, {
           format: 'dag-pb',
           hashAlg: 'sha2-256'
